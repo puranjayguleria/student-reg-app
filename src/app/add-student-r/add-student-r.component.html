@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <h2>Registeration Form</h2>
+    <form [formGroup]="registerationForm">
+            {{registerationForm.value | json}}
+            <div class=form-group>
+                <label>Username</label>
+                <input [class.is-invalid]="registerationForm.get('username').invalid && registerationForm.get('username').touched" formControlName="username" type="text" class="form-control">
+            </div>
+          
+            <div class=form-group>
+                    <label>Password</label>
+                    <input  [class.is-invalid]="registerationForm.get('password').invalid && registerationForm.get('password').touched" formControlName="password" type="text" class="form-control">
+            </div>
+
+            <div class=form-group>
+                    <label>Confirm Password</label>
+                    <input  [class.is-invalid]="registerationForm.get('confirmpassword').invalid && registerationForm.get('confirmpassword').touched"  formControlName="confirmpassword" type="text" class="form-control">
+            </div>
+            <div formGroupName="address">
+                    <label>City</label>
+                    <input  [class.is-invalid]="registerationForm.get('address').get('city').invalid && registerationForm.get('address').get('city').touched" formControlName="city" type="text" class="form-control">
+
+                    <label>State</label>
+                    <input  [class.is-invalid]="registerationForm.get('address').get('state').invalid && registerationForm.get('address').get('state').touched" formControlName="state" type="text" class="form-control">
+
+                    <label>Country</label>
+                    <input  [class.is-invalid]="registerationForm.get('address').get('country').invalid && registerationForm.get('address').get('country').touched" formControlName="country" type="text" class="form-control">
+            </div>
+            
+            <button class="btn btn-primary" type="submit">Register</button><br/><br/>
+            <button class="btn btn-secondary" type="buton" (click)="loadData()">Load Data</button>
+
+
+    </form>
+   
+</div>
