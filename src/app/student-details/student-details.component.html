@@ -6,3 +6,10 @@ Email:<input [(ngModel)]="email" type="text" [placeholder]="email"/> {{email}}<b
 <label>Mother Number: </label><label [innerHtml]="mothername"></label><br><br>
 <input type="button" value="submit" [disabled]="flag"><br><br>
 <input type="button" value="cancel" [disabled]="!flag"><br><br>
+
+<ul>
+    <li (click)="onSubmit(des)" *ngFor="let des of designations">
+        Name:{{des.name}} Job : {{des.job}}
+
+    </li>
+</ul>
