@@ -6,6 +6,13 @@
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<div>
+
+<app-test (childEvent)="message=$event" [parentData]="name"></app-test>
+
+Message sent by child is : {{message}}
+</div>
+<div>
 <h1> My first routing example</h1>
 <nav>
 
@@ -17,6 +24,8 @@
 
 
 </nav>
+
 <router-outlet>
 
 </router-outlet>    
+</div>

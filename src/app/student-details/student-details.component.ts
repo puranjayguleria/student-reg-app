@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'
+import { Router} from '@angular/router'
 @Component({
   selector: 'app-student-details',
   templateUrl: './student-details.component.html',
   styleUrls: ['./student-details.component.css']
 })
 export class StudentDetailsComponent implements OnInit {
+  
+  
   name="Puranjay";
   email="test@gmail.com";
   Phone = "966031525";
@@ -20,7 +22,7 @@ export class StudentDetailsComponent implements OnInit {
 
 onSubmit(desg){
 
-  this.router.navigate(['/student-details',desg.id,desg.job,desg.name])
+  this.router.navigate(['/student-details',desg.id])
 }
 
 

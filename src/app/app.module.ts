@@ -9,12 +9,19 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { from } from 'rxjs';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MoreDetailsComponent } from './more-details/more-details.component';
+import { OverviewComponent } from './overview/overview.component';
+import { ContactComponent } from './contact/contact.component';
+import { TestComponent } from './test/test.component';
+import { DetailproviderService } from './detailprovider.service';
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents,
     PageNotFoundComponent,
-    MoreDetailsComponent
+    MoreDetailsComponent,
+    OverviewComponent,
+    ContactComponent,
+    TestComponent
     
   ],
   imports: [
@@ -25,7 +32,7 @@ import { MoreDetailsComponent } from './more-details/more-details.component';
     CommonModule
     
   ],
-  providers: [],
+  providers: [DetailproviderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

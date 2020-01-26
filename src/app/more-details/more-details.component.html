@@ -1,5 +1,16 @@
-<h2>hi ! {{ empname }} , {{empjob}}. Your Id which is changing is : {{empid}}</h2>
+<h2>hi ! . Your Id which is changing is : {{empid}}</h2>
 
+<button (click)="next()">overview</button>
+<button (click)="prev()">contact</button>
+<router-outlet></router-outlet>
 <br/>
-<button (click)="onPrev()">prev</button>
+<button [disabled]="disableswitch(empid)" (click)="onPrev()">prev</button>
 <button (click)="onNext()">next</button>
+
+    <div *ngFor="let det of empdetails">
+        
+        <span *ngIf="compare(det.id,empid)">
+                Your name is : {{det.name}} and your job is : {{det.job}}
+
+        </span>
+    </div>
