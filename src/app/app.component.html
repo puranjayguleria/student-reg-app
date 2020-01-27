@@ -6,26 +6,25 @@
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<div>
-
-<app-test (childEvent)="message=$event" [parentData]="name"></app-test>
-
-Message sent by child is : {{message}}
-</div>
-<div>
-<h1> My first routing example</h1>
-<nav>
-
-<a routerLink="/student-details"> StudentDetails</a>
-
-<a routerLink="/reactiveform"> Reactive Form</a>
-
-<a routerLink="/templateform"> Template Form</a>
-
-
-</nav>
 
 <router-outlet>
+    <div>
 
+        <app-test (childEvent)="message=$event" [parentData]="name"></app-test>
+        
+        Message sent by child is : {{message}}
+        </div>
+        <div>
+        <h1> My first routing example</h1>
+        <nav>
+        
+        <a routerLink="/student-details"> StudentDetails</a>
+        
+        <a routerLink="/reactiveform"> Reactive Form</a>
+        
+        <a routerLink="/templateform"> Template Form</a>
+        
+        
+        </nav>
+    </div>
 </router-outlet>    
-</div>

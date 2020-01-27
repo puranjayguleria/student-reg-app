@@ -15,8 +15,6 @@ export class AddStudentComponent implements OnInit {
         Password:''
       },
       gender:"male"
-
-
     }
 
     onSubmit({ value, valid }: { value: User, valid: boolean }) {
