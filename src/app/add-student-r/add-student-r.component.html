@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <h2>Registeration Form</h2>
+    <h2>Registration Form</h2>
     <form [formGroup]="registerationForm">
             {{registerationForm.value | json}}
             <div class=form-group>
@@ -8,17 +8,22 @@
                 <small class="text-danger" [class.d-none]="registerationForm.get('username').valid || registerationForm.get('username').untouched">Username needs to be filled.</small>
         </div>
           
-            <div class=form-group>
+            <div class=form-group formGroupName="emailGroup">
                     <label>Password</label>
-                    <input  [class.is-invalid]="registerationForm.get('password').invalid && registerationForm.get('password').touched" formControlName="password" type="text" class="form-control">
-                    <small class="text-danger" [class.d-none]="registerationForm.get('password').valid || registerationForm.get('password').untouched">Password needs to be filled.</small>
+                    <input  [class.is-invalid]="registerationForm.get('emailGroup').get('password').invalid && registerationForm.get('emailGroup').get('password').touched" formControlName="password" type="text" class="form-control">
+                    <!-- <small class="text-danger" [class.d-none]="registerationForm.get('emailGroup').get('password').valid || registerationForm.get('emailGroup').get('password').untouched">Password needs to be filled.</small> -->
 
-                </div>
+                    
 
             <div class=form-group>
                     <label>Confirm Password</label>
-                    <input  [class.is-invalid]="registerationForm.get('confirmpassword').invalid && registerationForm.get('confirmpassword').touched"  formControlName="confirmpassword" type="text" class="form-control">
+                    <input  [class.is-invalid]="registerationForm.get('emailGroup').get('confirmpassword').invalid && registerationForm.get('emailGroup').get('confirmpassword').touched"  formControlName="confirmpassword" type="text" class="form-control">
             </div>
+            <div *ngIf="registerationForm.get('emailGroup').errors?.noji ">Password Mismatch</div>
+            
+            </div>
+            <!--<small class="text-danger" [class.d-none]="registerationForm.emailGroup.valid">Both passwords do no match.</small> -->
+
             <div formGroupName="address">
                     <label>City</label>
                     <input  [class.is-invalid]="registerationForm.get('address').get('city').invalid && registerationForm.get('address').get('city').touched" formControlName="city" type="text" class="form-control">

@@ -13,6 +13,9 @@ import { OverviewComponent } from './overview/overview.component';
 import { ContactComponent } from './contact/contact.component';
 import { TestComponent } from './test/test.component';
 import { DetailproviderService } from './detailprovider.service';
+import { HttpClientModule } from '@angular/common/http'
+import { EmployeeServiceService } from './employee-service.service';
+import { JsonfetcherComponent } from './jsonfetcher/jsonfetcher.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +24,8 @@ import { DetailproviderService } from './detailprovider.service';
     MoreDetailsComponent,
     OverviewComponent,
     ContactComponent,
-    TestComponent
+    TestComponent,
+    JsonfetcherComponent
     
   ],
   imports: [
@@ -29,10 +33,11 @@ import { DetailproviderService } from './detailprovider.service';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule
     
   ],
-  providers: [DetailproviderService],
+  providers: [DetailproviderService,EmployeeServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

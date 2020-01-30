@@ -9,7 +9,7 @@
 
 <router-outlet>
     <div>
-
+        
         <app-test (childEvent)="message=$event" [parentData]="name"></app-test>
         
         Message sent by child is : {{message}}
@@ -28,3 +28,4 @@
         </nav>
     </div>
 </router-outlet>    
+<app-jsonfetcher> HOLLA </app-jsonfetcher>
