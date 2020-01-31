@@ -1,14 +1,14 @@
 <form novalidate #f="ngForm" (ngSubmit)="onSubmit(f)">
   Name: <input type="text" placeholder="Your Name" name="name" [ngModel]="user.name" #fname="ngModel" minlength="2" required><br/>
 <div *ngIf="fname.errors?.required && fname.touched" >
-    Fill it bro
+    First Name Needs To Be Filled.
    </div>
    <div *ngIf="fname.errors?.minlength && fname.touched">
     Minimum of 2 characters
    </div><span  ngModelGroup>
     Email:<input type="email" name="email" ngModel #em="ngModel" required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"><br/>
     <div *ngIf="em.errors?.required && em.touched" >
-    Fill it bro
+    Email Field Needs To Be Filled.
    </div>
    
     
@@ -20,7 +20,7 @@
    Confirm Email:<input type="email" name="cemail" ngModel #cem="ngModel" required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$">
     
     <div *ngIf="cem.errors?.required && cem.touched" >
-        Fill it bro
+        Please Fill The Required Field
        </div>
     
     <div *ngIf="cem.errors?.pattern && em.touched">
@@ -37,7 +37,7 @@ Gender:<input type="radio" name="gender" value="Male" ngModel #male="ngModel" re
 <input type="radio" name="gender" value="Female" ngModel #fmale="ngModel" required>
 
 <div *ngIf="male.errors?.required && male.untouched">
-    Fill it bro!!!!
+    Please Fill The Required Field
    </div>
 
 

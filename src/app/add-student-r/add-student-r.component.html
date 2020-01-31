@@ -12,14 +12,18 @@
                     <label>Password</label>
                     <input  [class.is-invalid]="registerationForm.get('emailGroup').get('password').invalid && registerationForm.get('emailGroup').get('password').touched" formControlName="password" type="text" class="form-control">
                     <!-- <small class="text-danger" [class.d-none]="registerationForm.get('emailGroup').get('password').valid || registerationForm.get('emailGroup').get('password').untouched">Password needs to be filled.</small> -->
+                    <small class="text-danger" [class.d-none]="registerationForm.get('emailGroup').get('password').valid || registerationForm.get('emailGroup').get('password').untouched">Password needs to be filled.</small>
 
                     
 
             <div class=form-group>
                     <label>Confirm Password</label>
                     <input  [class.is-invalid]="registerationForm.get('emailGroup').get('confirmpassword').invalid && registerationForm.get('emailGroup').get('confirmpassword').touched"  formControlName="confirmpassword" type="text" class="form-control">
-            </div>
-            <div *ngIf="registerationForm.get('emailGroup').errors?.noji ">Password Mismatch</div>
+                    <small class="text-danger" [class.d-none]="registerationForm.get('emailGroup').get('confirmpassword').valid || registerationForm.get('emailGroup').get('confirmpassword').untouched">Password needs to be filled.</small>
+                     
+            
+                </div>
+            <div  *ngIf="registerationForm.get('emailGroup').errors?.noji ">Password Mismatch</div>
             
             </div>
             <!--<small class="text-danger" [class.d-none]="registerationForm.emailGroup.valid">Both passwords do no match.</small> -->
